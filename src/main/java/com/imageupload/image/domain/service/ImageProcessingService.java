@@ -9,7 +9,6 @@ import org.springframework.web.multipart.MultipartFile;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.*;
-import java.util.zip.ZipEntry;
 
 @Service
 public class ImageProcessingService {
