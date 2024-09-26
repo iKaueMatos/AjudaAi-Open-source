@@ -1,0 +1,33 @@
+<header class="bg-gradient-to-r from-blue-600 to-indigo-600 py-4 shadow-lg">
+  <div class="container mx-auto flex justify-between items-center">
+    <a href="#" class="text-white text-2xl font-bold flex items-center space-x-2">
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h1l3 9h11l3-9h1"></path>
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 6l2 4h10l2-4"></path>
+      </svg>
+      <span>Sistema de Imagens</span>
+    </a>
+
+    <nav class="hidden md:flex space-x-8">
+      <a href="/" class="text-gray-200 hover:text-white transition duration-300">Inicio</a>
+      <a href="/upload" class="text-gray-200 hover:text-white transition duration-300">Upload</a>
+      <a href="/historico" class="text-gray-200 hover:text-white transition duration-300">Histórico</a>
+      <a href="/ajuda" class="text-gray-200 hover:text-white transition duration-300">Ajuda</a>
+    </nav>
+
+    <div class="md:hidden flex items-center">
+      <button id="mobileMenuButton" class="text-white focus:outline-none">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div id="mobileMenu" class="md:hidden bg-blue-600 hidden">
+    <a href="/" class="block px-4 py-2 text-white hover:bg-blue-700">Home</a>
+    <a href="/upload" class="block px-4 py-2 text-white hover:bg-blue-700">Upload</a>
+    <a href="/historico" class="block px-4 py-2 text-white hover:bg-blue-700">Histórico</a>
+    <a href="/ajuda" class="block px-4 py-2 text-white hover:bg-blue-700">Ajuda</a>
+  </div>
+</header>

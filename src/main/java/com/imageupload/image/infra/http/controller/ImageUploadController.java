@@ -31,7 +31,7 @@ public class ImageUploadController {
         @RequestParam("height") int height,
         @RequestParam("format") String format,
         @RequestParam("compression") Double compression,
-        @RequestParam(value = "convertTo", required = false) String convertTo, // Novo parâmetro para conversão
+        @RequestParam(value = "convertTo", required = false) String convertTo,
         HttpServletResponse response,
         RedirectAttributes redirectAttributes
     ) throws IOException {
