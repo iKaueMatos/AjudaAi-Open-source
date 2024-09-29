@@ -16,7 +16,7 @@ Bem-vindo ao **Image upload**! Este projeto é uma aplicação web (Spring boot 
 ## 🛠️ Tecnologias Utilizadas
 
 - **Frontend:**
-  - [bootstrap](https://getbootstrap.com/) - Biblioteca de template para construção de interfaces.
+  - [tailwindcss](https://tailwindcss.com/) - Biblioteca de template para construção de interfaces.
 
 - **Backend:**
   - [Springboot](https://spring.io/projects/spring-boot/) - Framework para construção de aplicações Java de forma rápida e eficiente.
@@ -34,7 +34,7 @@ Para configurar este projeto localmente, siga estes passos:
 2. **Acessar o diretorio**
  
 ```bash
-    cd image-upload
+    cd AjudaAi-Converter
 ```
 
 ### 💡 Contribuindo
