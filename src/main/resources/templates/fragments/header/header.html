@@ -1,33 +1,53 @@
-<header class="bg-gradient-to-r from-blue-600 to-indigo-600 py-4 shadow-lg">
-  <div class="container mx-auto flex justify-between items-center">
-    <a href="#" class="text-white text-2xl font-bold flex items-center space-x-2">
-      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h1l3 9h11l3-9h1"></path>
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 6l2 4h10l2-4"></path>
-      </svg>
-      <span>Sistema de Imagens</span>
-    </a>
-
-    <nav class="hidden md:flex space-x-8">
-      <a href="/" class="text-gray-200 hover:text-white transition duration-300">Inicio</a>
-      <a href="/upload" class="text-gray-200 hover:text-white transition duration-300">Upload</a>
-      <a href="/historico" class="text-gray-200 hover:text-white transition duration-300">Histórico</a>
-      <a href="/ajuda" class="text-gray-200 hover:text-white transition duration-300">Ajuda</a>
-    </nav>
-
-    <div class="md:hidden flex items-center">
-      <button id="mobileMenuButton" class="text-white focus:outline-none">
-        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+  <div th:fragment="header">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
+      <div class="flex lg:flex-1">
+      <a href="#" class="-m-1.5 p-1.5">
+        <span class="font-bold">AjudaAI</span>
+      </a>
+    </div>
+    <div class="flex lg:hidden">
+      <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+        <span class="sr-only">Open main menu</span>
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
         </svg>
       </button>
     </div>
+    <div class="hidden lg:flex lg:gap-x-12">
+      <a href="/" class="text-sm font-semibold leading-6 text-gray-900 hover:text-violet-500">Inicio</a>
+      <a href="/tools" class="text-sm font-semibold leading-6 text-gray-900 hover:text-violet-500">Ferramentas</a>
+      <a href="/about-us" class="text-sm font-semibold leading-6 text-gray-900 hover:text-violet-500">Sobre nós</a>
+    </div>
+    <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+      <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Entrar<span aria-hidden="true">&rarr;</span></a>
+    </div>
+  </nav>
+  <div class="lg:hidden" role="dialog" aria-modal="true">
+    <div class="fixed inset-0 z-10"></div>
+    <div class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+      <div class="flex items-center justify-between">
+        <a href="#" class="-m-1.5 p-1.5">
+          <span class="font-bold">AjudaAI</span>
+        </a>
+        <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+          <span class="sr-only">Close menu</span>
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <div class="mt-6 flow-root">
+        <div class="-my-6 divide-y divide-gray-500/10">
+          <div class="space-y-2 py-6">
+            <a href="/" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Inicio</a>
+            <a href="/tools" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Ferramentas</a>
+            <a href="/about-us" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Sobre</a>
+          </div>
+          <div class="py-6">
+            <a href="#" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Entrar</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div id="mobileMenu" class="md:hidden bg-blue-600 hidden">
-    <a href="/" class="block px-4 py-2 text-white hover:bg-blue-700">Home</a>
-    <a href="/upload" class="block px-4 py-2 text-white hover:bg-blue-700">Upload</a>
-    <a href="/historico" class="block px-4 py-2 text-white hover:bg-blue-700">Histórico</a>
-    <a href="/ajuda" class="block px-4 py-2 text-white hover:bg-blue-700">Ajuda</a>
-  </div>
-</header>
+</div>

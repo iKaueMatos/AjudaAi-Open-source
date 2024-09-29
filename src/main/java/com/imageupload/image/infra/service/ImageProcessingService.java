@@ -37,8 +37,6 @@ public class ImageProcessingService implements IImageProcessingService {
 
     @Override
     public void processImages(MultipartFile[] files, ImageProcessingDataRequest requestData, HttpServletResponse response) throws IOException {
-        validateFiles(files);
-
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
 
         try (ZipArchiveOutputStream zipOutputStream = new ZipArchiveOutputStream(byteArrayOutputStream)) {
@@ -52,17 +50,6 @@ public class ImageProcessingService implements IImageProcessingService {
         prepareResponse(response, byteArrayOutputStream, requestData.getTitle());
     }
 
-    private void validateFiles(MultipartFile[] files) {
-        if (files == null || files.length == 0) {
-            throw new IllegalArgumentException("Nenhum arquivo foi enviado.");
-        }
-
-        for (int i = 0; i < files.length; i++) {
-            if (files[i] == null || files[i].isEmpty()) {
-                throw new IllegalArgumentException("O arquivo na posição " + (i + 1) + " está vazio ou nulo.");
-            }
-        }
-    }
 
     private void processEachFile(MultipartFile[] files, ImageProcessingDataRequest requestData,
                                  ZipArchiveOutputStream zipOutputStream) throws IOException {
