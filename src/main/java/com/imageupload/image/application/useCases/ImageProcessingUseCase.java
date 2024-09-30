@@ -19,8 +19,8 @@ public class ImageProcessingUseCase {
     }
 
     public void execute(
-        MultipartFile[] files, 
-        ImageProcessingDataRequest imageProcessData, 
+        MultipartFile[] files,
+        ImageProcessingDataRequest imageProcessData,
         HttpServletResponse response
     ) throws IOException {
         imageProcessingService.processImages(files, imageProcessData, response);

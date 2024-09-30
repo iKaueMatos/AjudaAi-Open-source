@@ -6,12 +6,13 @@
 
 ## 🚀 Visão Geral
 
-Bem-vindo ao **Image upload**! Este projeto é uma aplicação web (Spring boot MVC) totalmente funcional projetada para converter imagens e redmensionalas de maneira simultanea.
+Bem-vindo ao **Ajuda AI**! Este projeto é uma aplicação web (Spring boot MVC) totalmente funcional projetada para converter imagens e redmensionalas de maneira simultanea.
 
 ## 🌟 Principais Funcionalidades
 
-- **Redmencionamento**: Processos de cadastro, login e recuperação de senha sem interrupções.
-- **Conversão de imagens**: Publique atualizações, compartilhe imagens e expresse seus pensamentos em tempo real.
+- **Redimensionamento de Imagens**: Ajuste as dimensões de suas imagens definindo a largura e altura desejadas.
+- **Conversão de Formatos**: Converta imagens entre os formatos populares, como JPG, PNG e WEBP, com a possibilidade de configurar a compressão para otimizar o tamanho dos arquivos.
+- **Processamento Simultâneo**: Realize o redimensionamento e conversão de várias imagens ao mesmo tempo, economizando tempo e esforço.
 
 ## 🛠️ Tecnologias Utilizadas
 
