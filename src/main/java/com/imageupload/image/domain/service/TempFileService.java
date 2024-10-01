@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class TempFileService {
-     public File createTempFile(String format, BufferedImage image, String convertTo) throws IOException {
+    public File createTempFile(String format, BufferedImage image, String convertTo) throws IOException {
         String fileExtension = (convertTo != null) ? convertTo.toLowerCase() : format.toLowerCase();
         File tempFile = File.createTempFile("image", "." + fileExtension);
 
