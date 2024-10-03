@@ -206,6 +206,18 @@
         <h1 class="font-bold text-2xl">Imagens</h1>
         <div id="preview" class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4"></div>
       </div>
+
+      <div id="optionsModal" class="modal hidden fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center">
+        <div class="bg-white p-6 rounded-lg shadow-lg max-w-md">
+          <h2 class="text-xl font-bold mb-4">Opções</h2>
+          <p>O que você gostaria de fazer agora?</p>
+          <div class="mt-4 flex justify-between">
+            <button id="clearDataBtn" class="bg-red-500 text-white px-4 py-2 rounded-lg">Limpar Dados</button>
+            <button id="retryDownloadBtn" class="bg-yellow-500 text-white px-4 py-2 rounded-lg">Reiniciar Download</button>
+            <button id="finalizeBtn" class="bg-green-500 text-white px-4 py-2 rounded-lg">Finalizar</button>
+          </div>
+        </div>
+      </div>
     </div>
 
     <footer th:replace="fragments/footer/footer :: footer"></footer>
