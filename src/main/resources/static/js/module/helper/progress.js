@@ -10,11 +10,11 @@ export function updateProgress(step) {
 }
 
 export function startLoading() {
-    const progressBar = document.getElementById('progressBar');
-    const progressText = document.getElementById('progressText');
-  
-    if (progressBar && progressText) {
-      progressBar.style.width = '100%';
-      progressText.textContent = '100%';
-    }
+  const progressBar = document.getElementById('progressBar');
+  const progressText = document.getElementById('progressText');
+
+  if (progressBar && progressText) {
+    progressBar.style.width = '100%';
+    progressText.textContent = '100%';
   }
+}
