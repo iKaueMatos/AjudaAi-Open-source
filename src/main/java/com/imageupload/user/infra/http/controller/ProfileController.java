@@ -1,13 +1,12 @@
-package com.imageupload.auth.infra.http.controller;
+package com.imageupload.user.infra.http.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class AutheticationController {
-
-    @GetMapping("/login")
+public class ProfileController {
+    @GetMapping("/profile")
     public String handle() {
-        return "pages/auth/login/login";
+        return "pages/profile/profile";
     }
 }
