@@ -1,72 +1,60 @@
 <!DOCTYPE html>
 <html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ajuda AI | Ferramentas Online</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <meta name="description" content="Oferecemos ferramentas online para redimensionamento de imagens, compressão, conversão de arquivos e muito mais." />
-  </head>
 
-  <body class="bg-gray-100 flex flex-col min-h-screen">
-    <header role="banner" th:replace="fragments/header/header :: header"></header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ajuda AI | Ferramentas Online</title>
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+  <link rel="stylesheet" th:href="@{/dist/output.css}"></link>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <meta name="description"
+    content="Oferecemos ferramentas online para redimensionamento de imagens, compressão, conversão de arquivos e muito mais." />
+</head>
 
-    <main role="main" id="main-content" tabindex="-1">
-      <section class="relative" id="home" aria-labelledby="home-heading">
-        <div class="flex items-center justify-center h-screen px-6 mx-auto md:flex-row">
-          <div class="flex flex-col items-center text-center">
-            <h1 id="home-heading" class="text-3xl font-extrabold md:text-5xl lg:text-6xl">
-              Ferramentas
-              <span
-                class="font-extrabold text-transparent bg-gradient-to-r from-violet-500 to-violet-600 bg-clip-text"
-              >
-                Online
-              </span>
-            </h1>
-            <h2 class="mt-4 text-xl font-extrabold tracking-tight md:text-4xl lg:text-5xl">
-              <span
-                class="font-extrabold text-transparent bg-gradient-to-r from-violet-500 to-violet-600 bg-clip-text"
-              >
-                Especialistas
-              </span>
-              em redimensionamento de imagens e outras
-              <span
-                class="font-extrabold text-transparent bg-gradient-to-r from-violet-500 to-violet-600 bg-clip-text"
-              >
-                soluções digitais.
-              </span>
-            </h2>
-            <p class="max-w-3xl mt-6 text-lg md:text-xl lg:text-2xl text-black">
-              Oferecemos uma gama completa de ferramentas online, incluindo
-              redimensionamento de imagens, compressão e muito mais.
-            </p>
+<body class="bg-gray-100 flex flex-col min-h-screen">
+  <header role="banner" th:replace="fragments/header/header :: header"></header>
 
-            <div
-              class="flex flex-col items-center mt-8 space-y-4 md:flex-row md:space-y-0 md:space-x-4"
-              aria-label="Ações principais"
-            >
-              <a
-                href="/tools"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="block"
-              >
-                <button
-                  class="px-8 py-4 text-lg font-semibold text-white transition-transform duration-300 transform rounded-lg shadow-lg bg-gradient-to-r from-violet-500 to-violet-600 hover:scale-105"
-                  aria-label="Conheça nossas ferramentas"
-                >
-                  Conheça nossas ferramentas
-                </button>
-              </a>
-            </div>
-          </div>
+  <main role="main" id="main-content" tabindex="-1">
+    <section class="relative flex items-center justify-center h-screen px-6 mx-auto md:flex-row" id="home"
+      aria-labelledby="home-heading">
+      <div class="flex flex-col items-center text-center md:text-left">
+        <h1 id="home-heading" class="text-4xl font-extrabold md:text-5xl lg:text-6xl">
+          Ferramentas
+          <span
+            class="font-extrabold text-transparent bg-gradient-to-r from-violet-500 to-violet-600 bg-clip-text">Online</span>
+        </h1>
+        <h2 class="mt-4 text-2xl font-extrabold tracking-tight md:text-3xl lg:text-4xl">
+          <span
+            class="font-extrabold text-transparent bg-gradient-to-r from-violet-500 to-violet-600 bg-clip-text">Especialistas</span>
+          soluções digitais para otimizar o seu 
+          <span
+            class="font-extrabold text-transparent bg-gradient-to-r from-violet-500 to-violet-600 bg-clip-text">tempo.</span>
+        </h2>
+        <p class="max-w-8xl mt-6 text-lg md:text-xl lg:text-2xl text-gray-700">
+          Oferecemos uma gama completa de ferramentas online, incluindo redimensionamento de imagens, compressão e muito
+          mais.
+        </p>
+
+        <div class="flex flex-col items-center mt-8 space-y-4 md:flex-row md:space-y-0 md:space-x-4"
+          aria-label="Ações principais">
+          <a href="/tools" target="_blank" rel="noopener noreferrer">
+            <button
+              class="px-8 py-4 text-lg font-semibold text-white transition-transform duration-300 transform rounded-lg shadow-lg bg-gradient-to-r from-violet-500 to-violet-600 hover:scale-105"
+              aria-label="Conheça nossas ferramentas">
+              Conheça nossas ferramentas
+            </button>
+          </a>
         </div>
-        <section th:replace="fragments/tools/tools :: tools"></section>
-      </section>
-    </main>
+      </div>
+    </section>
 
-    <footer role="contentinfo" th:replace="fragments/footer/footer :: footer"></footer>
+    <section th:replace="fragments/tools/tools :: tools"></section>
+    <section th:replace="fragments/aboutUs/aboutUs :: about"></section>
+  </main>
 
-    <script type="module" th:src="@{/js/main.js}"></script>
-  </body>
+  <footer role="contentinfo" th:replace="fragments/footer/footer :: footer"></footer>
+
+  <script type="module" th:src="@{/js/main.js}"></script>
+</body>
 </html>

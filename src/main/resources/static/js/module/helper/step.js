@@ -1,6 +1,6 @@
 import { validateStep } from "/js/module/validation/validation.js";
 import { clearPreview } from "/js/module/helper/preview.js";
-import { saveFormData } from "/js/module/helper/localStorage.js";
+import { saveFormData } from "/js/module/helper/localstorage.js";
 
 let currentStepIndex = parseInt(localStorage.getItem('currentStepIndex')) || 0;
 

@@ -1,3 +1,5 @@
+import { previewImages } from "/js/module/helper/redmensioning.js";
+
 const keepDataCheckbox = document.getElementById('keepData');
 
 export function restoreFiles() {
