@@ -1,12 +1,11 @@
-import { previewImages } from "/js/module/helper/redmensioning.js";
-import { nextStep, previousStep } from "/js/module/helper/step.js";
-import { updateProgress, startLoading } from "/js/module/helper/progress.js";
-import { openMenu, closeMenu } from "/js/module/helper/menu.js";
+import redmensioning from '/js/pages/redmensioning/redmensioning.js';
+import * as pages from '/js/pages/pages.js';
 
-window.previewImages = previewImages;
-window.startLoading = startLoading;
-window.updateProgress = updateProgress;
-window.previousStep = previousStep;
-window.nextStep = nextStep;
-window.closeMenu = closeMenu;
-window.openMenu = openMenu;
+window.nextStep = redmensioning.nextStep;
+window.previousStep = redmensioning.previousStep;
+
+document.addEventListener("DOMContentLoaded", () => {
+  if (location === "redmensioning") {
+    redmensioning.inicializeDragAndDrop();
+  }
+});

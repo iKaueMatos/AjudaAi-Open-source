@@ -5,17 +5,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ferramenta Online | Redimensionamento de Imagens</title>
-  <link rel="stylesheet" th:href="@{/dist/output.css}"></link>
+  <link rel="stylesheet" th:href="@{/dist/output.css}">
+  </link>
+  <meta name="description"
+    content="Redimensione e comprima imagens JPG e PNG de forma fácil e rápida com nossa ferramenta online. Carregue várias imagens, defina altura, largura e formato de conversão, e faça o download com compressão personalizada.">
+  <meta name="keywords"
+    content="redimensionar imagens, compressão de imagens, conversão de imagens, JPG, PNG, ferramenta de redimensionamento, redimensionamento online, upload de imagens, redimensionar JPG, redimensionar PNG">
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 </head>
 
-<body class="bg-gray-100 flex flex-col min-h-screen">
+<body class="bg-gray-100 flex flex-col min-h-screen" data-page="redmensioning">
   <header th:replace="fragments/header/header :: header"></header>
 
   <div class="container mx-auto mt-10 flex-grow px-4">
     <h1 class="text-4xl font-bold text-center text-black">Redimensionar Imagens</h1>
     <p class="text-lg font-medium text-center text-black">
-      Redimensione imagens nos formatos JPG, PNG, e WEBP definindo altura e largura em pixels <br />
+      Redimensione imagens nos formatos JPG e PNG definindo altura e largura em pixels <br />
       Redimensione várias imagens de uma vez só.
     </p>
 
@@ -52,7 +57,7 @@
                 class="w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-violet-500"
                 id="title" name="title" placeholder="Digite o título" required />
             </div>
-            <button id="enter" type="button" onclick="nextStep(2)"
+            <button id="enter" type="button" onclick="nextStep()"
               class="w-full bg-violet-500 hover:bg-violet-600 text-white font-bold py-2 px-4 rounded-lg transition duration-200 ease-in-out">
               Próximo
             </button>
@@ -79,7 +84,7 @@
               class="w-full bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-lg transition duration-200 ease-in-out mb-4">
               Voltar
             </button>
-            <button type="button" id="enter" onclick="nextStep(3)"
+            <button type="button" id="enter" onclick="nextStep()"
               class="w-full bg-violet-500 hover:bg-violet-600 text-white font-bold py-2 px-4 rounded-lg transition duration-200 ease-in-out">
               Próximo
             </button>
@@ -94,7 +99,6 @@
                 id="format" name="format" required>
                 <option value="jpg">JPG</option>
                 <option value="png">PNG</option>
-                <option value="webp">WEBP</option>
               </select>
             </div>
             <div class="mb-6">
@@ -111,7 +115,7 @@
               class="w-full bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-lg transition duration-200 ease-in-out mb-4">
               Voltar
             </button>
-            <button type="button" onclick="nextStep(4)" id="enter"
+            <button type="button" onclick="nextStep()" id="enter"
               class="w-full bg-violet-500 hover:bg-violet-600 text-white font-bold py-2 px-4 rounded-lg transition duration-200 ease-in-out">
               Próximo
             </button>
@@ -157,7 +161,8 @@
             <div class="mb-6 flex flex-col">
               <h2 class="text-2xl font-semibold text-gray-700">Download da Imagem</h2>
               <p class="text-gray-600">Clique no botão abaixo para baixar sua imagem redimensionada:</p>
-              <a id="downloadButton" class="mt-4 inline-block bg-violet-500 hover:bg-violet-600 text-white font-bold py-2 px-4 rounded-lg transition duration-200 ease-in-out items-center text-center"
+              <a id="downloadButton"
+                class="mt-4 inline-block bg-violet-500 hover:bg-violet-600 text-white font-bold py-2 px-4 rounded-lg transition duration-200 ease-in-out items-center text-center"
                 th:href="@{/download/{id}(id=${fileId})}">Baixar Imagem</a>
             </div>
             <button type="button" onclick="previousStep(1)"
@@ -175,9 +180,9 @@
       <p>Seu download está pronto!</p>
     </div>
   </div>
-  
+
   <footer th:replace="fragments/footer/footer :: footer"></footer>
-  
+
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
   <script type="module" th:src="@{/js/main.js}" defer></script>
 </body>

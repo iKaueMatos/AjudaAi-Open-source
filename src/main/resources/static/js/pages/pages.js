@@ -2,11 +2,11 @@ const mobileMenuButton = document.getElementById('mobile-menu-button');
 const closeMenuButton = document.getElementById('close-menu-button');
 const mobileMenu = document.getElementById('mobile-menu');
 
-export function openMenu() {
+function openMenu() {
   mobileMenu.style.display = 'block';
 }
 
-export function closeMenu() {
+function closeMenu() {
   mobileMenu.style.display = 'none';
 }
 
@@ -18,3 +18,8 @@ mobileMenuButton.addEventListener('click', (event) => {
     closeMenu();
   }
 });
+
+export default {
+    openMenu,
+    closeMenu
+}
