@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ferramenta Online | Redimensionamento de Imagens</title>
   <link rel="stylesheet" th:href="@{/dist/output.css}"></link>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 </head>
 
 <body class="bg-gray-100 flex flex-col min-h-screen">
@@ -40,7 +41,7 @@
           </div>
         </div>
 
-        <form id="multiStepForm" method="POST" enctype="multipart/form-data" action="/upload"
+        <form id="multiStepForm" method="POST" enctype="multipart/form-data"
           class="bg-white p-8 rounded-lg shadow-lg border border-gray-200" target="downloadFrame"
           onsubmit="startLoading()">
           <!-- Step 1 -->
@@ -145,44 +146,40 @@
               </label>
             </div>
           </div>
+
+          <div class="w-full preview hidden">
+            <h1 class="font-bold text-2xl">Imagens</h1>
+            <div id="preview" class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+          </div>
+
+          <!-- Step 5: Download -->
+          <div class="step hidden" id="step-5">
+            <div class="mb-6 flex flex-col">
+              <h2 class="text-2xl font-semibold text-gray-700">Download da Imagem</h2>
+              <p class="text-gray-600">Clique no botão abaixo para baixar sua imagem redimensionada:</p>
+              <a id="downloadButton" class="mt-4 inline-block bg-violet-500 hover:bg-violet-600 text-white font-bold py-2 px-4 rounded-lg transition duration-200 ease-in-out items-center text-center"
+                th:href="@{/download/{id}(id=${fileId})}">Baixar Imagem</a>
+            </div>
+            <button type="button" onclick="previousStep(1)"
+              class="w-full bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-lg transition duration-200 ease-in-out mb-4">
+              Voltar para inicio
+            </button>
+          </div>
         </form>
       </div>
     </div>
-
-    <!-- Preview Images Section -->
-    <div id="previewContainer" class="mt-8 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"></div>
-
-    <iframe id="downloadFrame" name="downloadFrame" class="hidden"></iframe>
   </div>
 
-  <div th:if="${message}" class="mt-3">
-    <div class="bg-violet-100 border border-violet-500 text-violet-700 px-4 py-3 rounded relative" role="alert">
-      <strong class="font-bold">Sucesso!</strong>
-      <span class="block sm:inline" th:text="${message}"></span>
+  <div class="toast hidden" id="toast">
+    <div class="toast-content">
+      <p>Seu download está pronto!</p>
     </div>
   </div>
-  </div>
-  </div>
-
-  <div class="w-full preview hidden">
-    <h1 class="font-bold text-2xl">Imagens</h1>
-    <div id="preview" class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4"></div>
-  </div>
-
-  <div id="optionsModal" class="modal hidden fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center">
-    <div class="bg-white p-6 rounded-lg shadow-lg max-w-md">
-      <h2 class="text-xl font-bold mb-4">Opções</h2>
-      <p>O que você gostaria de fazer agora?</p>
-      <div class="mt-4 flex justify-between">
-        <button id="clearDataBtn" class="bg-red-500 text-white px-4 py-2 rounded-lg">Redmensionar novas imagens</button>
-        <button id="finalizeBtn" class="bg-green-500 text-white px-4 py-2 rounded-lg">Finalizar</button>
-      </div>
-    </div>
-  </div>
-  </div>
-
+  
   <footer th:replace="fragments/footer/footer :: footer"></footer>
-  <script type="module" th:src="@{/js/main.js}"></script>
+  
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  <script type="module" th:src="@{/js/main.js}" defer></script>
 </body>
 
 </html>

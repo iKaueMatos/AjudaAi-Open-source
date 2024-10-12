@@ -8,6 +8,7 @@ import java.io.IOException;
 import org.apache.commons.compress.archivers.zip.ZipArchiveOutputStream;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -16,8 +17,6 @@ import com.imageupload.image.application.service.IImageProcessingService;
 import com.imageupload.image.domain.service.ImageResizerService;
 import com.imageupload.image.domain.service.ImageZipService;
 import com.imageupload.image.domain.service.TempFileService;
-
-import jakarta.servlet.http.HttpServletResponse;
 
 @Service
 public class ImageProcessingService implements IImageProcessingService {
@@ -36,7 +35,7 @@ public class ImageProcessingService implements IImageProcessingService {
     }
 
     @Override
-    public void processImages(MultipartFile[] files, ImageProcessingDataRequest requestData, HttpServletResponse response) throws IOException {
+    public byte[] processImages(MultipartFile[] files, ImageProcessingDataRequest requestData) throws IOException {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
 
         try (ZipArchiveOutputStream zipOutputStream = new ZipArchiveOutputStream(byteArrayOutputStream)) {
@@ -47,9 +46,8 @@ public class ImageProcessingService implements IImageProcessingService {
             throw new IOException("Erro ao processar as imagens", e);
         }
 
-        prepareResponse(response, byteArrayOutputStream, requestData.getTitle());
+        return prepareResponse(byteArrayOutputStream, requestData.getTitle());
     }
-
 
     private void processEachFile(MultipartFile[] files, ImageProcessingDataRequest requestData,
                                  ZipArchiveOutputStream zipOutputStream) throws IOException {
@@ -77,11 +75,8 @@ public class ImageProcessingService implements IImageProcessingService {
         return baseTitle + " - " + index + "." + format;
     }
 
-    private void prepareResponse(HttpServletResponse response, ByteArrayOutputStream byteArrayOutputStream, String baseTitle) throws IOException {
-        String zipFileName = baseTitle + ".zip";
-        response.setContentType("application/zip");
-        response.setHeader("Content-Disposition", "attachment; filename=\"" + zipFileName + "\"");
-        response.getOutputStream().write(byteArrayOutputStream.toByteArray());
-        response.getOutputStream().flush();
+    private byte[] prepareResponse(ByteArrayOutputStream byteArrayOutputStream, String baseTitle) {
+        byte[] zipBytes = byteArrayOutputStream.toByteArray();
+        return zipBytes;
     }
 }
