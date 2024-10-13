@@ -151,28 +151,29 @@
             </div>
           </div>
 
-          <div class="w-full preview hidden">
-            <h1 class="font-bold text-2xl">Imagens</h1>
-            <div id="preview" class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4"></div>
-          </div>
-
+          
           <!-- Step 5: Download -->
           <div class="step hidden" id="step-5">
             <div class="mb-6 flex flex-col">
               <h2 class="text-2xl font-semibold text-gray-700">Download da Imagem</h2>
               <p class="text-gray-600">Clique no botão abaixo para baixar sua imagem redimensionada:</p>
               <a id="downloadButton"
-                class="mt-4 inline-block bg-violet-500 hover:bg-violet-600 text-white font-bold py-2 px-4 rounded-lg transition duration-200 ease-in-out items-center text-center"
-                th:href="@{/download/{id}(id=${fileId})}">Baixar Imagem</a>
+              class="mt-4 inline-block bg-violet-500 hover:bg-violet-600 text-white font-bold py-2 px-4 rounded-lg transition duration-200 ease-in-out items-center text-center"
+              th:href="@{/download/{id}(id=${fileId})}">Baixar Imagem</a>
             </div>
             <button type="button" onclick="previousStep(1)"
-              class="w-full bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-lg transition duration-200 ease-in-out mb-4">
-              Voltar para inicio
-            </button>
+            class="w-full bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-lg transition duration-200 ease-in-out mb-4">
+            Voltar para inicio
+          </button>
           </div>
         </form>
       </div>
     </div>
+  </div>
+  
+  <div class="w-full preview hidden">
+    <h1 class="font-bold text-2xl">Imagens</h1>
+    <div id="preview" class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4"></div>
   </div>
 
   <div class="toast hidden" id="toast">
